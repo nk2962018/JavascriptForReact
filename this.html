@@ -1,0 +1,20 @@
+<html>
+    <script>
+        const person = {
+            name: 'Nish',
+            walk() {
+                console.log(this); //reference to curent object
+            }
+        };
+        console.log('this references the person object')
+        person.walk()
+
+        //const walk = person.walk;
+        const walk = person.walk.bind(person)
+        console.log('Returns default window function if strict mode is not enabled')
+        console.log('the bind method is used to fix this')
+        // functions in javascript are objects
+        // using bind can refernce to the fucntion we want to refer to 
+        walk();
+    </script>
+</html>

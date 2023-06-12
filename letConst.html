@@ -1,0 +1,32 @@
+
+<script>
+function sayHelloLet(){
+    for(let i = 0; i<5; i++){
+      console.log('from let',i)  // executes 0,1,2,3,4
+    }
+   // console.log(i)  // gives error : i is not defined
+  }
+  sayHelloLet();
+  
+  
+  function sayHelloVar(){
+    for(var i = 0; i<5; i++){
+      console.log('from var',i)  // executes 0,1,2,3,4
+    }
+    console.log('from var extra',i)  // // executes 0,1,2,3,4,5
+  }
+  
+  sayHelloVar();
+  
+  const x =1;
+  console.log(x)
+  //x=2; // throws error since it cannot be reassigned
+  
+  // Take aways
+  
+  // 1. var is function scoped
+  // 2. let/const are block scoped
+  // 3. use let only when you need to reassign a variable
+  // 4. const cannot be reassigned
+
+</script>

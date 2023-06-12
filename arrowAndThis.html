@@ -1,0 +1,25 @@
+<script>
+    const person = {
+        talk(){
+
+            // to solve the below situationwe use
+            var self = this;
+            // we get a window function because the callback function
+            //inside the settimeout is not part of any object
+            // by default it part of the browser object that window object.
+            // it is a standalone function.
+
+            setTimeout(() =>{
+                // now we have a reference to person object
+
+                // the below can be written using arrow functions and it need
+                // not use self.
+                // the arrow functions dont rebind this keyword
+               // console.log('self',self);
+               console.log('this',this)
+            } ,1000)
+            
+        }
+    };
+    person.talk();
+</script>

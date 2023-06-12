@@ -1,0 +1,93 @@
+    <html>
+        <script>
+            let peoples = [
+                {name: "aaron",age: 65},
+                {name: "beth",age: 2},
+                {name: "cara",age: 13},
+                {name: "daniel",age: 3},
+                {name: "ella",age: 25},
+                {name: "fin",age: 1},
+                {name: "george",age: 43},
+            ]
+
+            let toddlers = peoples.filter(people =>people.age <=3)
+            console.log('Toddlers',toddlers)
+
+            let team = [
+                {
+                    name: "aaron",
+                    position: "developer"
+                },
+                {
+                    name: "beth",
+                    position: "ui designer"
+                },
+                {
+                    name: "cara",
+                    position: "developer"
+                },
+                {
+                    name: "daniel",
+                    position: "content manager"
+                },
+                {
+                    name: "ella",
+                    position: "cto"
+                },
+                {
+                    name: "fin",
+                    position: "backend engineer"
+                },
+                {
+                    name: "george",
+                    position: "developer"
+                },
+            ]
+
+            let developer = team.filter(dev => dev.position == 'developer');
+
+            console.log('Developers',developer);
+
+            let notDevelopers = team.filter(notDev => notDev.position !== 'developer')
+
+            console.log('Not developers',notDevelopers);
+
+            // How to access the index property
+
+            let winners = ["Anna", "Beth", "Cara"];
+            let gold = winners.filter((winner,index) => index == 0)
+            let silver = winners.filter((winner,index) => index == 1)
+            let bronze = winners.filter((winner,index) => index == 2)
+
+            console.log(`Gold winner : ${gold} , Silver Winner: ${silver} , Bronze Winner: ${bronze}`)
+
+            // filter(callbackfn, contextobj)
+            //How to access the context object with this
+
+            let people = [
+                {name: "aaron", age: 65},
+                {name: "beth", age: 15},
+                {name: "cara", age: 13},
+                {name: "daniel", age: 3},
+                {name: "ella", age: 25},
+                {name: "fin", age: 16},
+                {name: "george", age: 18},
+            ]
+
+            let range ={
+                lower:12,
+                upper:16
+            }
+
+            let teenagers = people.filter(function(person){
+            return person.age >= this.lower && person.age<= this.upper; // doubt 
+            },range)
+
+            console.log('teenagers',teenagers)
+
+            //We passed the range object as a second argument to filter(). 
+            //At that point, it became our context object. 
+            //Consequently, we were able to access our upper and lower ranges in our 
+            //callback function with the this.upper and this.lower reference respectively.
+        </script>
+    </html>
